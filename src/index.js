@@ -15,6 +15,10 @@ app.get('/healthcheck', (req, res) => {
   res.send('Ok')
 })
 
+app.get('/homepage', (req, res) => {
+  res.sendFile(__dirname + '/views/home.html')
+})
+
 server.listen(PORT, HOST, () => {
   console.log(`Server running on http://${HOST}:${PORT}`)
 })

@@ -12,7 +12,7 @@ const server = http.createServer(app)
 initAPI(app)
 
 app.get('/healthcheck', (req, res) => {
-  res.send('Hello world')
+  res.send('Ok')
 })
 
 server.listen(PORT, HOST, () => {

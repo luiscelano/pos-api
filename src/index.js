@@ -1,4 +1,5 @@
 import express from 'express'
+import bodyParser from 'body-parser'
 import http from 'http'
 import path from 'path'
 import { initAPI } from 'api'
@@ -10,9 +11,11 @@ const PORT = 3000
 
 const server = http.createServer(app)
 
-initAPI(app)
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'views')))
 
+initAPI(app)
 app.get('/healthcheck', (req, res) => {
   res.send('Ok')
 })

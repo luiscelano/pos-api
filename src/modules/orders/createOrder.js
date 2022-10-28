@@ -19,5 +19,9 @@ export const createOrder = async (req, res) => {
 
     const result = await createOrderItems(req.body.items, { orderId, invoiceId })
     res.send('createOrder module')
-  } catch (error) {}
+  } catch (error) {
+    res.status(400).json({
+      message: error.toString()
+    })
+  }
 }

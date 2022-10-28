@@ -51,7 +51,7 @@ CONSTRAINT PK_ORDERSUMMARY PRIMARY KEY(orderSummaryId)
 
 create table orders(
 orderId int identity(1,1) not null,
-orderNumber int,
+orderNumber int identity(1, 1),
 customerId int,
 createdAt date,
 displayStatus varchar(50),
@@ -79,3 +79,10 @@ CONSTRAINT FK_ORDERITEMS_ORDER FOREIGN KEY(orderId) REFERENCES orders(orderId),
 CONSTRAINT FK_ORDERITEMS_PRODUCTS FOREIGN KEY(productId) REFERENCES products(productId),
 CONSTRAINT FK_ORDERITEMS_INVOICE FOREIGN KEY(invoiceId) REFERENCES invoice(invoiceId)
 )
+
+GO
+create trigger incrementOrderNumber
+on orders FOR insert
+as
+update orders set orderNumber = orderId
+where orderId = IDENT_CURRENT('order')

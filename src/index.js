@@ -9,7 +9,7 @@ import config from 'config'
   const app = express()
 
   const HOST = 'localhost'
-  const PORT = 3000
+  const PORT = process.env.PORT || 3000
 
   global.config = await config()
 
@@ -20,15 +20,15 @@ import config from 'config'
   app.use(express.static(path.join(__dirname, 'views')))
 
   initAPI(app)
-  app.get('/healthcheck', (req, res) => {
+  app.get('/healthcheck', (__, res) => {
     res.send('Ok')
   })
 
-  app.get('/homepage', (req, res) => {
+  app.get('/homepage', (__, res) => {
     res.sendFile(path.resolve(__dirname + '/views/home.html'))
   })
 
-  server.listen(PORT, HOST, () => {
+  server.listen(PORT, () => {
     console.log(`Server running on http://${HOST}:${PORT}`)
   })
 })()

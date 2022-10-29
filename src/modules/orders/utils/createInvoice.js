@@ -10,6 +10,5 @@ export const createInvoice = async (input) => {
   const query = generateQuery('invoice').insert(data)
   await executeQuery(query)
   const { recordset } = await executeQuery(generateQuery('invoice').selectLastElement('invoiceId'))
-
   return recordset.length && recordset[0]
 }

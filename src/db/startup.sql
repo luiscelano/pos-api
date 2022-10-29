@@ -8,7 +8,7 @@ create table customer(
 customerId int identity(1,1) not null,
 firstName varchar(30),
 lastName varchar(30),
-createdAt date,
+createdAt datetime default current_timestamp,
 address varchar(50),
 nit varchar(50),
 CONSTRAINT PK_CUSTOMER PRIMARY KEY(customerId)
@@ -17,11 +17,11 @@ CONSTRAINT PK_CUSTOMER PRIMARY KEY(customerId)
 
 create table products(
 productId int identity(1,1) not null,
-title varchar(30), 
-createdAt date,
+title varchar(100), 
+createdAt datetime default current_timestamp,
 price money,
 isVisible int,
-imageUrl varchar(100),
+imageUrl varchar(255),
 stock int,
 category varchar(30),
 CONSTRAINT PK_PRODUCTS PRIMARY KEY(productId)
@@ -34,14 +34,14 @@ address varchar(50),
 nit varchar(30),
 number varchar(20),
 serie varchar(50),
-createdAt date,
+createdAt datetime default current_timestamp,
 CONSTRAINT PK_INVOICE PRIMARY KEY(invoiceId)
 )
 
 
 create table orderSummary(
 orderSummaryId int identity(1,1) not null,
-createdAt date,
+createdAt datetime default current_timestamp,
 total money,
 itemTotal money,
 fulfillmentTotal money,
@@ -53,7 +53,7 @@ create table orders(
 orderId int identity(1,1) not null,
 orderNumber int identity(1, 1),
 customerId int,
-createdAt date,
+createdAt datetime default current_timestamp,
 displayStatus varchar(50),
 orderSummaryId int,
 totalItemQuantity int,
@@ -70,7 +70,7 @@ orderId int,
 productId int,
 invoiceId int, 
 tittle varchar(50),
-createdAt date,
+createdAt datetime default current_timestamp,
 price money,
 quantity int,
 subtotal money,
@@ -81,8 +81,14 @@ CONSTRAINT FK_ORDERITEMS_INVOICE FOREIGN KEY(invoiceId) REFERENCES invoice(invoi
 )
 
 GO
-create trigger incrementOrderNumber
-on orders FOR insert
-as
-update orders set orderNumber = orderId
-where orderId = IDENT_CURRENT('order')
+create trigger updateProductStock
+on orderItems for INSERT
+AS
+BEGIN
+declare @prodId int
+declare @quantity INT
+select @prodId = productId from inserted
+select @quantity = quantity from inserted
+update products set stock -= @quantity
+where productId = @prodId
+end

@@ -8,6 +8,5 @@ export const createSummary = async (input) => {
   const query = generateQuery('orderSummary').insert(data)
   await executeQuery(query)
   const { recordset } = await executeQuery(generateQuery('orderSummary').selectLastElement('orderSummaryId'))
-
   return recordset.length && recordset[0]
 }

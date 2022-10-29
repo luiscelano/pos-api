@@ -1,7 +1,4 @@
 import mssql from 'mssql'
-// import { DB_SERVER, DB_PORT, DATABASE, DB_USER, DB_PASSWORD } from 'config/development'
-
-// const { DB_SERVER, DB_PORT, DATABASE, DB_USER, DB_PASSWORD } = global?.config
 
 export const executeQuery = async (query) => {
   const { DB_SERVER, DB_PORT, DATABASE, DB_USER, DB_PASSWORD } = global?.config

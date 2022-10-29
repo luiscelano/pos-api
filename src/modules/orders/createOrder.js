@@ -5,20 +5,35 @@ import { executeQuery } from 'utils/executeQuery'
 export const createOrder = async (req, res) => {
   try {
     // creates a enrolled invoice
-    const { invoiceId } = await createInvoice(req.body)
+    const { invoiceId, ...invoiceData } = await createInvoice(req.body)
     // creates a order summary
-    const { orderSummaryId } = await createSummary(req.body)
+    const { orderSummaryId, ...summaryData } = await createSummary(req.body)
 
     const orderInput = { ...req.body }
+    delete orderInput.items
+    delete orderInput.customerName
+    delete orderInput.nit
+    delete orderInput.address
     Object.assign(orderInput, { invoiceId, orderSummaryId })
 
     const query = generateQuery('orders').insert(orderInput)
     await executeQuery(query)
+    //set the current orderNumber
     const { recordset } = await executeQuery(generateQuery('orders').selectLastElement('orderId'))
-    const { orderId } = recordset.length && recordset[0]
+    const { orderId, ...orderData } = recordset.length && recordset[0]
+    await executeQuery(generateQuery('orders').update({ orderNumber: orderId }, { orderId }))
 
-    const result = await createOrderItems(req.body.items, { orderId, invoiceId })
-    res.send('createOrder module')
+    const createdItems = await createOrderItems(req.body.items, { orderId, invoiceId })
+
+    const output = {
+      orderId,
+      ...orderData,
+      orderNumber: orderId,
+      items: createdItems,
+      orderSummary: { ...summaryData, orderSummaryId },
+      invoice: { ...invoiceData, invoiceId }
+    }
+    res.status(200).json(output)
   } catch (error) {
     res.status(400).json({
       message: error.toString()

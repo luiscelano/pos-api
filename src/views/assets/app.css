@@ -1,0 +1,6 @@
+.product-container {
+    display: grid;
+    grid-gap: 10px;
+    max-width: 800px;
+    grid-template-columns: repeat(3, 1fr);  
+}

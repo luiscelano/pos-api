@@ -86,80 +86,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin::Tap pane-->
 												<div class="tab-pane fade show active" id="kt_pos_food_content_1">
 													<!--begin::Wrapper-->
-													<div class="d-flex flex-wrap d-grid gap-5 gap-xxl-9">
-														<!--begin::Card-->
-														<div class="card card-flush flex-row-fluid p-6 pb-5 mw-100 bg-hover-light-secondary cursor-pointer add-product-to-order" data-id="1">
-															<!--begin::Body-->
-															<div class="card-body text-center">
-																<!--begin::Food img-->
-																<img src="/assets/media/stock/food/img-2.jpg" class="rounded-3 mb-4 w-150px h-150px w-xxl-200px h-xxl-200px" alt="" />
-																<!--end::Food img-->
-																<!--begin::Info-->
-																<div class="mb-2">
-																	<!--begin::Title-->
-																	<div class="text-center">
-																		<span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-3 fs-xl-1">T-Bone Stake</span>
-																		<span class="text-gray-400 fw-semibold d-block fs-6 mt-n1">16 mins to cook</span>
-																	</div>
-																	<!--end::Title-->
-																</div>
-																<!--end::Info-->
-																<!--begin::Total-->
-																<span class="text-success text-end fw-bold fs-1">Q16.50</span>
-																<!--end::Total-->
-															</div>
-															<!--end::Body-->
-														</div>
-														<!--end::Card-->
-														<!--begin::Card-->
-														<div class="card card-flush flex-row-fluid p-6 pb-5 mw-100 bg-hover-light-secondary cursor-pointer add-product-to-order" data-id="2">
-															<!--begin::Body-->
-															<div class="card-body text-center">
-																<!--begin::Food img-->
-																<img src="/assets/media/stock/food/img-7.jpg" class="rounded-3 mb-4 w-150px h-150px w-xxl-200px h-xxl-200px" alt="" />
-																<!--end::Food img-->
-																<!--begin::Info-->
-																<div class="mb-2">
-																	<!--begin::Title-->
-																	<div class="text-center">
-																		<span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-3 fs-xl-1">Chef’s Salmon</span>
-																		<span class="text-gray-400 fw-semibold d-block fs-6 mt-n1">16 mins to cook</span>
-																	</div>
-																	<!--end::Title-->
-																</div>
-																<!--end::Info-->
-																<!--begin::Total-->
-																<span class="text-success text-end fw-bold fs-1">Q12.40</span>
-																<!--end::Total-->
-															</div>
-															<!--end::Body-->
-														</div>
-														<!--end::Card-->
-														<!--begin::Card-->
-														<div class="card card-flush flex-row-fluid p-6 pb-5 mw-100 bg-hover-light-secondary cursor-pointer add-product-to-order" data-id="3">
-															<!--begin::Body-->
-															<div class="card-body text-center">
-																<!--begin::Food img-->
-																<img src="/assets/media/stock/food/img-8.jpg" class="rounded-3 mb-4 w-150px h-150px w-xxl-200px h-xxl-200px" alt="" />
-																<!--end::Food img-->
-																<!--begin::Info-->
-																<div class="mb-2">
-																	<!--begin::Title-->
-																	<div class="text-center">
-																		<span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-3 fs-xl-1">Ramen</span>
-																		<span class="text-gray-400 fw-semibold d-block fs-6 mt-n1">16 mins to cook</span>
-																	</div>
-																	<!--end::Title-->
-																</div>
-																<!--end::Info-->
-																<!--begin::Total-->
-																<span class="text-success text-end fw-bold fs-1">Q14.90</span>
-																<!--end::Total-->
-															</div>
-															<!--end::Body-->
-														</div>
-														<!--end::Card-->
-
+													<div class="d-flex flex-wrap d-grid gap-5 gap-xxl-9" id="productItems" >
 													</div>
 													<!--end::Wrapper-->
 												</div>
@@ -202,118 +129,14 @@ License: For each use you must have a valid license purchased only from above li
 													</thead>
 													<!--end::Table head-->
 													<!--begin::Table body-->
-													<tbody id="cnt-tbody-order">
-														<!--
-														<tr data-kt-pos-element="item" data-kt-pos-item-price="7.5">
-															<td class="pe-0">
-																<div class="d-flex align-items-center">
-																	<img src="/assets/media/stock/food/img-9.jpg" class="w-50px h-50px rounded-3 me-3" alt="" />
-																	<span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Soup of the Day</span>
-																</div>
-															</td>
-															<td class="pe-0">
-																&lt;!&ndash;begin::Dialer&ndash;&gt;
-																<div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-																	&lt;!&ndash;begin::Decrease control&ndash;&gt;
-																	<button type="button" class="btn btn-icon btn-sm btn-light btn-icon-gray-400" data-kt-dialer-control="decrease">
-																		&lt;!&ndash;begin::Svg Icon | path: icons/duotune/arrows/arr089.svg&ndash;&gt;
-																		<span class="svg-icon svg-icon-3x">
-																			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																				<rect x="6" y="11" width="12" height="2" rx="1" fill="currentColor" />
-																			</svg>
-																		</span>
-																		&lt;!&ndash;end::Svg Icon&ndash;&gt;
-																	</button>
-																	&lt;!&ndash;end::Decrease control&ndash;&gt;
-																	&lt;!&ndash;begin::Input control&ndash;&gt;
-																	<input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-30px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="1" />
-																	&lt;!&ndash;end::Input control&ndash;&gt;
-																	&lt;!&ndash;begin::Increase control&ndash;&gt;
-																	<button type="button" class="btn btn-icon btn-sm btn-light btn-icon-gray-400" data-kt-dialer-control="increase">
-																		&lt;!&ndash;begin::Svg Icon | path: icons/duotune/arrows/arr087.svg&ndash;&gt;
-																		<span class="svg-icon svg-icon-3x">
-																			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																				<rect opacity="0.5" x="11" y="18" width="12" height="2" rx="1" transform="rotate(-90 11 18)" fill="currentColor" />
-																				<rect x="6" y="11" width="12" height="2" rx="1" fill="currentColor" />
-																			</svg>
-																		</span>
-																		&lt;!&ndash;end::Svg Icon&ndash;&gt;
-																	</button>
-																	&lt;!&ndash;end::Increase control&ndash;&gt;
-																</div>
-																&lt;!&ndash;end::Dialer&ndash;&gt;
-															</td>
-															<td class="text-end">
-																<span class="fw-bold text-primary fs-2" data-kt-pos-element="item-total">Q7.50</span>
-															</td>
-														</tr>
-														<tr data-kt-pos-element="item" data-kt-pos-item-price="13.5">
-															<td class="pe-0">
-																<div class="d-flex align-items-center">
-																	<img src="/assets/media/stock/food/img-3.jpg" class="w-50px h-50px rounded-3 me-3" alt="" />
-																	<span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Pancakes</span>
-																</div>
-															</td>
-															<td class="pe-0">
-																&lt;!&ndash;begin::Dialer&ndash;&gt;
-																<div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-																	&lt;!&ndash;begin::Decrease control&ndash;&gt;
-																	<button type="button" class="btn btn-icon btn-sm btn-light btn-icon-gray-400" data-kt-dialer-control="decrease">
-																		&lt;!&ndash;begin::Svg Icon | path: icons/duotune/arrows/arr089.svg&ndash;&gt;
-																		<span class="svg-icon svg-icon-3x">
-																			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																				<rect x="6" y="11" width="12" height="2" rx="1" fill="currentColor" />
-																			</svg>
-																		</span>
-																		&lt;!&ndash;end::Svg Icon&ndash;&gt;
-																	</button>
-																	&lt;!&ndash;end::Decrease control&ndash;&gt;
-																	&lt;!&ndash;begin::Input control&ndash;&gt;
-																	<input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-30px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="2" />
-																	&lt;!&ndash;end::Input control&ndash;&gt;
-																	&lt;!&ndash;begin::Increase control&ndash;&gt;
-																	<button type="button" class="btn btn-icon btn-sm btn-light btn-icon-gray-400" data-kt-dialer-control="increase">
-																		&lt;!&ndash;begin::Svg Icon | path: icons/duotune/arrows/arr087.svg&ndash;&gt;
-																		<span class="svg-icon svg-icon-3x">
-																			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																				<rect opacity="0.5" x="11" y="18" width="12" height="2" rx="1" transform="rotate(-90 11 18)" fill="currentColor" />
-																				<rect x="6" y="11" width="12" height="2" rx="1" fill="currentColor" />
-																			</svg>
-																		</span>
-																		&lt;!&ndash;end::Svg Icon&ndash;&gt;
-																	</button>
-																	&lt;!&ndash;end::Increase control&ndash;&gt;
-																</div>
-																&lt;!&ndash;end::Dialer&ndash;&gt;
-															</td>
-															<td class="text-end">
-																<span class="fw-bold text-primary fs-2" data-kt-pos-element="item-total">Q27.00</span>
-															</td>
-														</tr>-->
-													</tbody>
+													<tbody id="cnt-tbody-order"></tbody>
 													<!--end::Table body-->
 												</table>
 												<!--end::Table-->
 											</div>
 											<!--end::Table container-->
 											<!--begin::Summary-->
-											<div class="d-flex flex-stack bg-success rounded-3 p-6 mb-11">
-												<!--begin::Content-->
-												<div class="fs-6 fw-bold text-white">
-													<span class="d-block lh-1 mb-2">Subtotal</span>
-<!--													<span class="d-block mb-2">Discounts</span>-->
-<!--													<span class="d-block mb-9">Tax(12%)</span>-->
-													<span class="d-block fs-2qx lh-1">Total</span>
-												</div>
-												<!--end::Content-->
-												<!--begin::Content-->
-												<div class="fs-6 fw-bold text-white text-end">
-													<span class="d-block lh-1 mb-2" data-kt-pos-element="total">Q93.46</span>
-<!--													<span class="d-block mb-2" data-kt-pos-element="discount">-Q8.00</span>-->
-<!--													<span class="d-block mb-9" data-kt-pos-element="tax">Q11.20</span>-->
-													<span class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">Q93.46</span>
-												</div>
-												<!--end::Content-->
+											<div id="orderSummary">
 											</div>
 											<!--end::Summary-->
 											<!--begin::Payment Method-->
@@ -332,17 +155,52 @@ License: For each use you must have a valid license purchased only from above li
 														<i class="fonticon-cash-payment fs-2hx mb-2 pe-0"></i>
 														<!--end::Icon-->
 														<!--begin::Title-->
-														<span class="fs-7 fw-bold d-block">Card</span>
+														<span class="fs-7 fw-bold d-block">Efectivo</span>
 														<!--end::Title-->
 													</label>
 													<!--end::Radio-->
 												</div>
 												<!--end::Radio group-->
-												<!--begin::Actions-->
-												<button type="button" id="btn-payment-order" class="btn btn-primary fs-1 w-100 py-4">Orden pagada</button>
-												<!--end::Actions-->
 											</div>
 											<!--end::Payment Method-->
+											<!--begin::Customer Info-->
+											<div class="m-0">
+												<!--begin::Title-->
+												<h1 class="fw-bold text-gray-800 mb-5">Datos del cliente</h1>
+												<form>
+													<div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+								<!--begin::Label-->
+								<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+									<span class="required">Nombre</span>
+									<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" aria-label="Specify a target name for future usage and reference" data-bs-original-title="Specify a target name for future usage and reference" data-kt-initialized="1"></i>
+								</label>
+								<!--end::Label-->
+								<input type="text" class="form-control form-control-solid" placeholder="Ingresa nombre" name="customerName" id="customerName" onchange="onInputChange(this)">
+							<div class="fv-plugins-message-container invalid-feedback"></div></div>
+							<div class="row g-9 mb-8">
+								<!--begin::Col-->
+								<div class="col-md-6 fv-row fv-plugins-icon-container">
+									<label class="required fs-6 fw-semibold mb-2">Nit</label>
+								<input type="text" class="form-control form-control-solid" placeholder="Ingresa nit" name="nit" id="nit" onchange="onInputChange(this)">
+								<div class="fv-plugins-message-container invalid-feedback"></div></div>
+								<!--end::Col-->
+								<!--begin::Col-->
+								<div class="col-md-6 fv-row">
+									<label class="required fs-6 fw-semibold mb-2">Dirección</label>
+									<!--begin::Input-->		
+								<input type="text" class="form-control form-control-solid" placeholder="Ingresa dirección" name="address" id="address" onchange="onInputChange(this)">
+								<div class="fv-plugins-message-container invalid-feedback"></div></div>
+									<!--end::Input-->
+								</div>
+								<!--end::Col-->
+							</div>
+							</form>
+												<!--end::Title-->
+											</div>
+											<!--end::Customer Info-->
+												<!--begin::Actions-->
+												<button type="button" id="btn-payment-order" class="btn btn-primary fs-1 w-100 py-4">Crear Orden</button>
+												<!--end::Actions-->
 										</div>
 										<!--end: Card Body-->
 									</div>
@@ -367,7 +225,6 @@ License: For each use you must have a valid license purchased only from above li
 							<!--end::Copyright-->
 							<!--begin::Menu-->
 							<ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-
 							</ul>
 							<!--end::Menu-->
 						</div>
@@ -411,8 +268,10 @@ License: For each use you must have a valid license purchased only from above li
 		<!--end::Custom Javascript-->
 
 		<!--begin::Custom Diego-->
-		<script src="/assets/js/add_products.js"></script>
+		<script src="/assets/js/order_summary.js"></script>
 		<script src="/assets/js/get_products.js"></script>
+		<script src="/assets/js/add_products.js"></script>
+		<script src="/assets/js/create_order.js"></script>
 		<!--end::Custom Diego-->
 		<!--end::Javascript-->
 	</body>
